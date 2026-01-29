@@ -1,356 +1,144 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- ================= META BÁSICO ================= -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NYXTECH | Tecnología que nunca duerme</title>
-  <meta name="description" content="NYXTECH ofrece soporte TI, mesa de ayuda, infraestructura y seguridad informática para pymes y empresas.">
+  <title>NYX-TECHNO</title>
 
-  <!-- ================= FUENTES ================= -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- ESTILOS -->
+  <link rel="stylesheet" href="css/styles.css">
 
-  <!-- ================= ICONOS ================= -->
+  <!-- ICONOS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- ================= ESTILOS ================= -->
-  <style>
-    /* ================= VARIABLES DE COLOR ================= */
-    :root{
-      --bg:#050510;
-      --bg-alt:#0a0a1a;
-      --card:#0f1024;
-      --border:rgba(255,255,255,.08);
-      --text:#ffffff;
-      --muted:#b8b8c7;
-      --primary:#8b5cf6;
-      --secondary:#3b82f6;
-      --accent:#b89cff;
-      --success:#22c55e;
-      --whatsapp:#25d366;
-    }
-
-    /* ================= RESET ================= */
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{
-      font-family:'Poppins',sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.6;
-      overflow-x:hidden;
-    }
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-
-    /* ================= CONTENEDOR ================= */
-    .container{
-      max-width:1200px;
-      margin:auto;
-      padding:0 24px;
-    }
-
-    /* ================= BOTONES ================= */
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px 26px;
-      border-radius:30px;
-      font-weight:600;
-      transition:.3s;
-    }
-    .btn-primary{
-      background:linear-gradient(135deg,var(--primary),var(--secondary));
-      color:#000;
-    }
-    .btn-primary:hover{
-      transform:translateY(-2px);
-      box-shadow:0 12px 30px rgba(139,92,246,.4);
-    }
-    .btn-outline{
-      border:1px solid var(--border);
-      color:var(--text);
-    }
-    .btn-outline:hover{border-color:var(--accent)}
-
-    /* ================= NAVBAR ================= */
-    header{
-      position:sticky;
-      top:0;
-      z-index:999;
-      background:rgba(10,10,26,.7);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid var(--border);
-    }
-    .nav{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:16px 0;
-    }
-    .logo{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight:700;
-      letter-spacing:1px;
-    }
-    .logo span{color:var(--accent)}
-    nav ul{
-      display:flex;
-      gap:24px;
-      list-style:none;
-    }
-    nav a{color:var(--muted);font-weight:500}
-    nav a:hover{color:#fff}
-
-    /* ================= HERO ================= */
-    .hero{
-      min-height:90vh;
-      display:flex;
-      align-items:center;
-      text-align:center;
-      background:
-        radial-gradient(800px 400px at 20% 20%, rgba(139,92,246,.15), transparent),
-        radial-gradient(600px 300px at 80% 30%, rgba(59,130,246,.15), transparent);
-    }
-    .hero h1{
-      font-size:clamp(2.4rem,5vw,3.8rem);
-      margin-bottom:14px;
-    }
-    .hero p{
-      max-width:720px;
-      margin:0 auto 28px;
-      color:var(--muted);
-    }
-
-    /* ================= SECCIONES ================= */
-    section{padding:90px 0}
-    h2{
-      text-align:center;
-      font-size:clamp(1.8rem,4vw,2.4rem);
-      color:var(--accent);
-      margin-bottom:40px;
-    }
-
-    /* ================= SERVICIOS ================= */
-    .services{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:26px;
-    }
-    .service{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:18px;
-      padding:26px;
-      transition:.3s;
-      position:relative;
-      overflow:hidden;
-    }
-    .service::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(135deg,transparent,rgba(139,92,246,.15));
-      opacity:0;
-      transition:.3s;
-    }
-    .service:hover{
-      transform:translateY(-8px);
-      border-color:rgba(184,156,255,.5);
-      box-shadow:0 18px 40px rgba(0,0,0,.4);
-    }
-    .service:hover::after{opacity:1}
-    .service i{
-      font-size:34px;
-      color:var(--accent);
-      margin-bottom:14px;
-    }
-    .service h3{margin-bottom:8px}
-    .service p{
-      font-size:.95rem;
-      color:var(--muted);
-    }
-
-    /* ================= BENEFICIOS ================= */
-    .dark{background:var(--bg-alt)}
-    .benefits{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:18px;
-      max-width:900px;
-      margin:auto;
-    }
-    .benefit{
-      background:rgba(255,255,255,.03);
-      border:1px solid var(--border);
-      border-radius:14px;
-      padding:18px;
-      display:flex;
-      gap:10px;
-    }
-    .benefit i{color:var(--success)}
-
-    /* ================= FORMULARIO ================= */
-    form{
-      max-width:520px;
-      margin:auto;
-      background:rgba(255,255,255,.03);
-      border:1px solid var(--border);
-      padding:24px;
-      border-radius:18px;
-      display:flex;
-      flex-direction:column;
-      gap:14px;
-    }
-    input,textarea{
-      padding:12px 14px;
-      border-radius:10px;
-      border:1px solid #2a2a3a;
-      background:#0f1022;
-      color:#fff;
-    }
-    input:focus,textarea:focus{
-      outline:none;
-      border-color:var(--accent);
-    }
-
-    /* ================= FOOTER ================= */
-    footer{
-      padding:30px 0;
-      text-align:center;
-      border-top:1px solid var(--border);
-      color:var(--muted);
-    }
-
-    /* ================= WHATSAPP FLOTANTE ================= */
-    .whatsapp{
-      position:fixed;
-      bottom:26px;
-      right:26px;
-      width:64px;
-      height:64px;
-      background:var(--whatsapp);
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:32px;
-      color:#fff;
-      box-shadow:0 14px 32px rgba(37,211,102,.45);
-      z-index:1000;
-      animation:pulse 2s infinite;
-    }
-    @keyframes pulse{
-      0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}
-      70%{box-shadow:0 0 0 20px rgba(37,211,102,0)}
-      100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}
-    }
-
-    /* ================= RESPONSIVE ================= */
-    @media(max-width:900px){
-      nav ul{display:none}
-    }
-  </style>
 </head>
 
 <body>
 
-<!-- ================= WHATSAPP ================= -->
-<a href="https://wa.me/573000000000?text=Hola%20NYXTECH,%20quiero%20información%20sobre%20sus%20servicios%20TI"
-   class="whatsapp" target="_blank" aria-label="WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
-<!-- ================= NAVBAR ================= -->
-<header>
-  <div class="container nav">
-    <div class="logo">NYX<span>TECH</span></div>
-    <nav>
-      <ul>
+<!-- =================================================
+     HEADER FIJO CON MENÚ DESPLEGABLE
+================================================== -->
+<header class="header">
+  <!-- Contenedor para centrar contenido -->
+  <div class="container-header">
+    <!-- LOGO DE LA EMPRESA -->
+    <div class="logo">
+      <img src="img/logo.jpeg" alt="NYX-TECHNO">
+    </div>
+    <!-- BOTÓN HAMBURGUESA (SOLO MÓVIL) -->
+    <button class="menu-toggle" aria-label="Abrir menú">
+      <!-- Líneas del icono ☰ -->
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav class="nav">
+      <ul class="menu">
         <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#beneficios">Por qué NYXTECH</a></li>
+        <li><a href="#modelo">Modelo TI</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
+
   </div>
 </header>
 
+
+
 <!-- ================= HERO ================= -->
 <section class="hero">
-  <div class="container">
-    <h1>Tecnología que nunca duerme</h1>
-    <p>Gestionamos, protegemos y optimizamos tu infraestructura tecnológica para que tu empresa opere sin interrupciones.</p>
-    <a href="#contacto" class="btn btn-primary">Solicitar asesoría</a>
-  </div>
+  <h1>La tecnología de tu empresa, bajo control</h1>
+  <p>
+    Infraestructura estable, soporte oportuno y seguridad básica 
+    para una operación continua.
+  </p>
+  <a href="#contacto" class="btn-primary">Solicitar asesoría</a>
 </section>
 
 <!-- ================= SERVICIOS ================= -->
-<section id="servicios">
-  <div class="container">
-    <h2>Servicios Tecnológicos</h2>
-    <div class="services">
+<section id="servicios" class="services">
+  <h2>Servicios Tecnológicos</h2>
 
-      <div class="service">
-        <i class="fa-solid fa-headset"></i>
-        <h3>Soporte Técnico N1 / N2</h3>
-        <p>Resolución de incidentes, mantenimiento de equipos, soporte remoto y en sitio bajo SLA definidos.</p>
-      </div>
+  <div class="services-grid">
 
-      <div class="service">
-        <i class="fa-solid fa-ticket"></i>
-        <h3>Mesa de Ayuda ITIL</h3>
-        <p>Gestión de tickets, seguimiento, métricas, escalamiento y reportes de desempeño del servicio.</p>
-      </div>
+    <article class="service-card">
+      <i class="fas fa-headset"></i>
+      <h3>Mesa de Ayuda TI</h3>
+      <p>
+        Soporte N1 y N2 basado en ITIL. Atención a usuarios, resolución de incidentes,
+        gestión de accesos, correo, impresoras y software empresarial.
+      </p>
+    </article>
 
-      <div class="service">
-        <i class="fa-solid fa-network-wired"></i>
-        <h3>Infraestructura y Redes</h3>
-        <p>Diseño y administración de redes, servidores, cableado estructurado y estandarización tecnológica.</p>
-      </div>
+    <article class="service-card">
+      <i class="fas fa-network-wired"></i>
+      <h3>Infraestructura</h3>
+      <p>
+        Diseño y mantenimiento de redes LAN/WAN, WiFi corporativo,
+        servidores, estaciones de trabajo y estandarización tecnológica.
+      </p>
+    </article>
 
-      <div class="service">
-        <i class="fa-solid fa-shield-halved"></i>
-        <h3>Seguridad Informática</h3>
-        <p>Protección de endpoints, copias de seguridad, control de accesos y prevención de amenazas.</p>
-      </div>
+    <article class="service-card">
+      <i class="fas fa-shield-halved"></i>
+      <h3>Seguridad Básica</h3>
+      <p>
+        Antivirus administrado, backups automáticos, control de accesos
+        y buenas prácticas de protección de la información.
+      </p>
+    </article>
 
-    </div>
   </div>
 </section>
 
-<!-- ================= BENEFICIOS ================= -->
-<section id="beneficios" class="dark">
-  <div class="container">
-    <h2>¿Por qué elegir NYXTECH?</h2>
-    <div class="benefits">
-      <div class="benefit"><i class="fa-solid fa-check"></i> Soporte 24/7 y tiempos medibles</div>
-      <div class="benefit"><i class="fa-solid fa-check"></i> Procesos basados en ITIL</div>
-      <div class="benefit"><i class="fa-solid fa-check"></i> Técnicos certificados</div>
-      <div class="benefit"><i class="fa-solid fa-check"></i> Escalable para tu crecimiento</div>
-    </div>
-  </div>
+<!-- ================= MODELO TI ================= -->
+<section id="modelo" class="model">
+  <h2>Nuestro enfoque TI</h2>
+  <p>
+    Trabajamos con procesos claros, documentación, monitoreo
+    y mejora continua para que la tecnología funcione a favor del negocio.
+  </p>
 </section>
 
 <!-- ================= CONTACTO ================= -->
-<section id="contacto">
-  <div class="container">
-    <h2>Contáctanos</h2>
-    <form>
-      <input type="text" placeholder="Nombre completo" required>
-      <input type="email" placeholder="Correo electrónico" required>
-      <input type="tel" placeholder="Teléfono" required>
-      <textarea rows="4" placeholder="Cuéntanos tu necesidad tecnológica"></textarea>
-      <button class="btn btn-primary">Enviar solicitud</button>
-    </form>
-  </div>
+<section id="contacto" class="contact">
+  <h2>Contáctanos</h2>
+
+  <form id="contactForm">
+    <label for="nombre">Nombre completo *</label>
+    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+    
+    <label for="email">Correo corporativo *</label>
+    <input type="email" id="email" name="email" placeholder="tu@empresa.com" required>
+    
+    <label for="telefono">Teléfono (opcional)</label>
+    <input type="tel" id="telefono" name="telefono" placeholder="+57 300 000 0000">
+    
+    <label for="mensaje">Mensaje *</label>
+    <textarea id="mensaje" name="mensaje" placeholder="Describe tu necesidad tecnológica..." required></textarea>
+    
+    <div id="mensajeRespuesta" style="display: none; padding: 15px; border-radius: 8px; margin-top: 10px;"></div>
+    
+    <button type="submit">Enviar mensaje</button>
+  </form>
 </section>
+
+<!-- ================= WHATSAPP ================= -->
+<a
+  href="https://wa.me/573132374866?text=Hola%20quiero%20información%20sobre%20sus%20servicios"
+  class="whatsapp-float"
+  target="_blank"
+  aria-label="WhatsApp"
+>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
 
 <!-- ================= FOOTER ================= -->
 <footer>
-  © 2026 NYXTECH · Tecnología que nunca duerme
+  © 2026 NYXTECH · Tecnología confiable para empresas
 </footer>
 
+<!-- JS -->
+<script src="js/mai.js"></script>
 </body>
 </html>
